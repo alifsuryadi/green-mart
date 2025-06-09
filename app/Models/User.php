@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -45,4 +46,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class)->orderBy('order_number');
+    }
+
+    // public function products()
+    // {
+    //     return $this->hasMany(Product::class);
+    // }
 }

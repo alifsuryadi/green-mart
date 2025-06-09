@@ -1,6 +1,28 @@
-# 🍃 Green Mart - Product Management System
+<h1 align="center">
+🍃 Green Mart - Product Management System
+</h1>
 
+<div align="center">
+
+![Laravel](https://img.shields.io/badge/Framework-Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/Language-PHP-777BB3?style=for-the-badge&logo=php&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Framework-Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=opensource&logoColor=white)
+
+</div>
+
+<p align="center">
 Green Mart is a comprehensive product management system designed specifically for Green Mart's needs. Built with Laravel 12, featuring dynamic product management, category organization, and image upload capabilities.
+
+</p>
+
+## Overview
+
+Below are screenshots showcasing the Product Management interface and functionality:
+
+![Product Management Overview 1](public/images/product.webp)
+![Product Management Overview 2](public/images/profile.webp)
 
 ## ✨ Features
 

@@ -12,6 +12,28 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     /**
+     * Display the user's profile.
+     */
+    public function show(Request $request): View
+    {
+        $user = $request->user();
+        $stats = [
+            'total_products' => $user->products()->count(),
+            'total_categories' => 0,
+            'total_images' => 0,
+        ];
+        
+        foreach ($user->products as $product) {
+            $stats['total_categories'] += $product->categories()->count();
+            foreach ($product->categories as $category) {
+                $stats['total_images'] += $category->images()->count();
+            }
+        }
+        
+        return view('profile.show', compact('user', 'stats'));
+    }
+
+    /**
      * Display the user's profile form.
      */
     public function edit(Request $request): View

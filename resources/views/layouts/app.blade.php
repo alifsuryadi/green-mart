@@ -80,9 +80,15 @@
                                 <i class="fas fa-box me-2"></i> Produk
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('profile.*') ? 'active' : '' }}" href="{{ route('profile.edit') }}">
-                                <i class="fas fa-user me-2"></i> Profil
+                            <a class="nav-link {{ request()->routeIs('profile.show') ? 'active' : '' }}" href="{{ route('profile.show') }}">
+                                <i class="fas fa-user me-2"></i> My Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('profile.edit') ? 'active' : '' }}" href="{{ route('profile.edit') }}">
+                                <i class="fas fa-cog me-2"></i> Settings
                             </a>
                         </li>
                         <li class="nav-item">

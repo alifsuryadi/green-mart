@@ -12,9 +12,9 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         // Get users
-        $admin = User::where('email', 'admin@greenmart.com')->first();
-        $julia = User::where('email', 'julia@greenmart.com')->first();
-        $robert = User::where('email', 'robert@greenmart.com')->first();
+        $admin = User::where('email', 'admin@gmail.com')->first();
+        $julia = User::where('email', 'julia@gmail.com')->first();
+        $robert = User::where('email', 'robert@gmail.com')->first();
 
         // Admin products
         $adminProducts = [

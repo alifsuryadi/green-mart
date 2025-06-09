@@ -1,61 +1,170 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🍃 Green Mart - Product Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Green Mart is a comprehensive product management system designed specifically for Green Mart's needs. Built with Laravel 12, featuring dynamic product management, category organization, and image upload capabilities.
 
-## About Laravel
+## ✨ Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🎯 Core Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   **User Authentication**: Secure login and registration system with email verification.
+-   **Product Management**: Create, read, update, and delete products with a maximum of 5 products per user.
+-   **Category System**: Add up to 3 categories per product with descriptions.
+-   **Image Upload**: Multiple image uploads per category (JPG, JPEG, PNG supported).
+-   **SEO-Friendly URLs**: Slug-based routing for better SEO optimization.
+-   **Responsive Design**: Mobile-first approach with Bootstrap 5.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🚀 Additional Features
 
-## Learning Laravel
+-   **Landing Page**: Beautiful homepage with statistics and feature showcase.
+-   **User Profile**: Comprehensive profile page with activity timeline.
+-   **Sidebar Navigation**: Easy-to-use navigation system.
+-   **Real-time Validation**: Dynamic form validation and notifications.
+-   **Auto-increment Numbering**: Automatic product numbering system.
+-   **Bulk Operations**: Delete multiple products at once.
+-   **Search & Filter**: Find products quickly.
+-   **Export/Import**: Excel, CSV, PDF, JSON support.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🛡️ Security Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   **CSRF Protection**: Cross-Site Request Forgery protection.
+-   **XSS Prevention**: Input sanitization and output escaping.
+-   **SQL Injection Protection**: Eloquent ORM and prepared statements.
+-   **Authentication Guards**: Route middleware protection.
+-   **Password Hashing**: Bcrypt password encryption.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📦 Requirements
 
-## Laravel Sponsors
+### System Requirements
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+-   PHP >= 8.2
+-   Composer >= 2.0
+-   Node.js >= 14.x
+-   NPM >= 6.x or Yarn
+-   MySQL >= 8.0 or PostgreSQL >= 12
 
-### Premium Partners
+### PHP Extensions
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+-   BCMath PHP Extension
+-   Ctype PHP Extension
+-   cURL PHP Extension
+-   DOM PHP Extension
+-   Fileinfo PHP Extension
+-   JSON PHP Extension
+-   Mbstring PHP Extension
+-   OpenSSL PHP Extension
+-   PDO PHP Extension
+-   Tokenizer PHP Extension
+-   XML PHP Extension
+-   GD PHP Extension (for image processing)
 
-## Contributing
+## 🔧 Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone the Repository**
 
-## Code of Conduct
+```bash
+git clone https://github.com/yourusername/green-mart.git
+cd green-mart
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. **Install PHP Dependencies**
 
-## Security Vulnerabilities
+```bash
+composer install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. **Install Node Dependencies**
 
-## License
+```bash
+npm install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. **Environment Setup**
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+5. **Database Configuration**
+    > Update your `.env` file with database credentials:
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_green_mart
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+6. **Create Database**
+
+```bash
+CREATE DATABASE db_green_mart CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+7. **Run Migrations & Seeders**
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+8. **Create Storage Link**
+
+```bash
+php artisan storage:link
+```
+
+> #### If the Command Doesn’t Work
+>
+> If `php artisan storage:link` doesn't work, and the path contains `!`, create the symbolic link manually using PowerShell:
+>
+> 1. Open PowerShell as Administrator.
+> 2. Run this command:
+>
+> ```bash
+> New-Item -ItemType SymbolicLink -Path "D:\Path\To\Your\Project\public\storage" -Target "D:\Path\To\Your\Project\storage\app\public"
+> ```
+
+9. **Build Assets**
+
+```bash
+npm run build
+# Or for development
+npm run dev
+```
+
+10. **Start the Application**
+
+```bash
+php artisan serve
+```
+
+> Visit `http://localhost:8000` in your browser.
+
+4. **Environment Setup**
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+# Product Management
+
+### Add Product (Maximum 5 per user)
+
+1. Click "Tambah Produk" button.
+2. Enter product name.
+3. Product will be automatically numbered.
+
+### Add Categories (Maximum 3 per product)
+
+1. Click "Tambah Kategori" on product.
+2. Enter category name and description.
+3. Categories are product-specific.
+
+### Upload Images
+
+1. Click upload button for each category.
+2. Select JPG, JPEG, or PNG files.
+3. Multiple images per category allowed.

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login - Green Mart</title>
-    
+    <link rel="icon" href="{{ asset('/favicomatic/favicon.ico') }}" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -87,12 +87,18 @@
                             <label for="password" class="form-label">
                                 <i class="fas fa-lock me-1"></i> Password
                             </label>
-                            <input type="password" class="form-control @error('password') is-invalid @enderror" 
-                                   id="password" name="password" required>
+                            <div class="input-group">
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" 
+                                    id="password" name="password" required>
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword1">
+                                    <i class="fas fa-eye" id="eyeIcon1"></i>
+                                </button>
+                            </div>
                             @error('password')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+
 
                         <!-- Remember Me -->
                         <div class="mb-3 form-check">
@@ -110,20 +116,21 @@
                         <!-- Links -->
                         <div class="text-center mt-3">
                             @if (Route::has('password.request'))
-                                <a href="{{ route('password.request') }}" class="text-muted text-decoration-none">
+                                <a href="{{ route('password.request') }}" class="text-secondary text-decoration-none">
                                     Forgot your password?
                                 </a>
-                                                        @endif
+                            @endif
                         </div>
                         
                         <hr class="my-4">
                         
-                        <div class="text-center">
-                            <p class="mb-0">Don't have an account?</p>
-                            <a href="{{ route('register') }}" class="btn btn-outline-success mt-2">
-                                <i class="fas fa-user-plus me-2"></i> Create Account
+                        <div class="text-center d-flex justify-content-center align-items-center">
+                            <p class="mb-0 me-2">Don't have an account?</p>
+                            <a href="{{ route('register') }}" class="text-success mt-0">
+                                 Register
                             </a>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -160,7 +167,24 @@
             var toastElement = document.querySelector('.toast');
             var toast = new bootstrap.Toast(toastElement);
             toast.show();
-        };
+
+            document.getElementById('togglePassword1').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon1');
+
+            // Toggle the type attribute
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = "password";
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        });
+
+                };
     </script>
 </body>
 </html>

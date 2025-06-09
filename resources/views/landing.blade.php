@@ -110,6 +110,14 @@
             color: white;
         }
 
+        .navbar-nav .nav-item .nav-link.active {
+            color: var(--green-primary);
+            /* font-weight: bold; */
+        }
+        .btn-outline-success:hover{
+            color: white
+        }
+
     </style>
 </head>
 <body>
@@ -344,5 +352,45 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all sections and nav links
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            // Function to remove 'active' class from all links
+            function removeActiveClass() {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+            }
+
+            // Function to add 'active' class to the correct link
+            function addActiveClass(sectionId) {
+                const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            // Listen for scroll event
+            window.addEventListener('scroll', function () {
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                // Update the active link based on the current section
+                if (currentSectionId) {
+                    removeActiveClass();
+                    addActiveClass(currentSectionId);
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

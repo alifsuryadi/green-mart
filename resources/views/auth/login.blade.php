@@ -152,7 +152,7 @@
                 <div class="toast align-items-center text-secondary bg-white border-0 position-fixed top-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="d-flex">
                         <div class="toast-body">
-                            Tim Pengembangan:
+                            Testing Account:
                             <br> Email: admin@gmail.com
                             <br> Password: password
                         </div>

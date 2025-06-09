@@ -84,7 +84,7 @@ Below are screenshots showcasing the Product Management interface and functional
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/yourusername/green-mart.git
+git clone https://github.com/alifsuryadi/green-mart.git
 cd green-mart
 ```
 

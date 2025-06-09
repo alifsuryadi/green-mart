@@ -164,13 +164,6 @@ php artisan serve
 
 > Visit `http://localhost:8000` in your browser.
 
-4. **Environment Setup**
-
-```bash
-cp .env.example .env
-php artisan key:generate
-```
-
 # Product Management
 
 ### Add Product (Maximum 5 per user)
